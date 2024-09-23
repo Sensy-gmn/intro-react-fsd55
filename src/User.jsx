@@ -3,23 +3,19 @@ export default function User() {
     const nom = "Goumain";
     const age = 23;
 
+    const isAuthentificated = true;
+    const info = `Welcome to the Project ${prenom} ${nom} agé de ${age} ans`;
+    const infoNotConnected = `Welcome to the Project, please sign in to continue...`;
+
     return (
         <>
-            {age >= 18 ? (
+            {isAuthentificated ? (
                 <>
-                    <h1>
-                        Helo my name is : {prenom} {nom} and i&apos;m {age}
-                        years old
-                    </h1>
-                    <p>Voici ma belle description</p>
+                    <h1>{info}</h1>
                 </>
             ) : (
                 <>
-                    <h1>
-                        Helo my name is : {prenom} {nom} and i&apos;m {age}
-                        years old
-                    </h1>
-                    <p>Trop jeune mince !</p>
+                    <h1>{infoNotConnected}</h1>
                 </>
             )}
         </>
