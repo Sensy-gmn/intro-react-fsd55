@@ -11,11 +11,11 @@ export default function User() {
         <>
             {isAuthentificated ? (
                 <>
-                    <h1>{info}</h1>
+                    <h1 style={{ color: "green" }}>{info}</h1>
                 </>
             ) : (
                 <>
-                    <h1>{infoNotConnected}</h1>
+                    <h1 style={{ color: "red" }}>{infoNotConnected}</h1>
                 </>
             )}
         </>
