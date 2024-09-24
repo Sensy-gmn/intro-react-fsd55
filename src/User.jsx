@@ -1,23 +1,29 @@
-export default function User() {
-    const prenom = "Alexandre";
-    const nom = "Goumain";
-    const age = 23;
-
+export default function User({ prenom, nom, age, image }) {
     const isAuthentificated = true;
-    const info = `Welcome to the Project ${prenom} ${nom} agé de ${age} ans`;
-    const infoNotConnected = `Welcome to the Project, please sign in to continue...`;
 
     return (
-        <>
+        <div
+            style={{
+                backgroundColor: "grey",
+                margin: "1rem",
+                borderRadius: "1rem",
+            }}
+        >
             {isAuthentificated ? (
                 <>
-                    <h1 style={{ color: "green" }}>{info}</h1>
+                    <h1 style={{ color: "green" }}>
+                        Hello Welcome to the Project {prenom} {nom} agé de {age}
+                        ans
+                    </h1>
+                    <img src={image} alt={prenom} />
                 </>
             ) : (
                 <>
-                    <h1 style={{ color: "red" }}>{infoNotConnected}</h1>
+                    <h1 style={{ color: "red" }}>
+                        Welcome to the Project, please sign in to continue...
+                    </h1>
                 </>
             )}
-        </>
+        </div>
     );
 }
